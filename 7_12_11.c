@@ -7,41 +7,41 @@ void showMessage();
 
 int main(void)
 {
-	float ah,bh,ph,weight;
-	float applePrice,bananaPrice,photatoPrice;
-	float fruitsPrice,acturallyFruitsPrice;
-	float weightTotal,weightPrice;
+	float ah, bh, ph, weight;
+	float applePrice, bananaPrice, photatoPrice;
+	float fruitsPrice, acturallyFruitsPrice;
+	float weightTotal, weightPrice;
 
 	char choice;
 
 	ah = bh = ph = 0.0f;
 	showMessage();
 
-	while( (choice = getchar()) != 'q')
+	while ( (choice = getchar()) != 'q')
 	{
 
-		printf("your choice is [%c] \n",choice);
+		printf("your choice is [%c] \n", choice);
 
 		printf("please enter weight\n");
-		scanf("%f",&weight);
+		scanf("%f", &weight);
 
 		printf("your weight is [%f] \n", weight);
 
-		switch(choice)
+		switch (choice)
 		{
-			case 'a':
-			ah =weight;
+		case 'a':
+			ah = weight;
 			break;
 
-			case 'b':
+		case 'b':
 			bh = weight;
 			break;
 
-			case 'c':
+		case 'c':
 			ph = weight;
 			break;
 
-			default:
+		default:
 			printf("please enter a valid weight\n");
 			return 0;
 		}
@@ -55,18 +55,18 @@ int main(void)
 	photatoPrice = PHOTATO * ph;
 
 	fruitsPrice = applePrice + bananaPrice + photatoPrice;
-	weightTotal = ah+bh+ph;
+	weightTotal = ah + bh + ph;
 
-	if(fruitsPrice > 100)
+	if (fruitsPrice > 100)
 	{
-		acturallyFruitsPrice = fruitsPrice* 0.95;
+		acturallyFruitsPrice = fruitsPrice * 0.95;
 	}
 	else
 	{
 		acturallyFruitsPrice = fruitsPrice;
 	}
 
-	if(weightTotal<=5)
+	if (weightTotal <= 5)
 	{
 		weightPrice = 3.5;
 	}
@@ -79,13 +79,13 @@ int main(void)
 		weightPrice = 8 + weightTotal * 0.1;
 	}
 
-	printf("you by %f ponds apple ,total price %f\n",ah,applePrice);
-	printf("you by %f ponds banana ,total price %f\n",bh,bananaPrice);
-	printf("you by %f ponds photato ,total price %f\n",ph,photatoPrice);
-	printf("total fruit price %f ,after promts price %f\n",fruitsPrice,acturallyFruitsPrice );
-	printf("total weight %f ,weight price %f\n",weightTotal, weightPrice);
+	printf("you by %f ponds apple ,total price %f\n", ah, applePrice);
+	printf("you by %f ponds banana ,total price %f\n", bh, bananaPrice);
+	printf("you by %f ponds photato ,total price %f\n", ph, photatoPrice);
+	printf("total fruit price %f ,after promts price %f\n", fruitsPrice, acturallyFruitsPrice );
+	printf("total weight %f ,weight price %f\n", weightTotal, weightPrice);
 
-	printf("total price %f\n",weightPrice+acturallyFruitsPrice);
+	printf("total price %f\n", weightPrice + acturallyFruitsPrice);
 
 	return 0;
 }
